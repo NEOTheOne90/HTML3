@@ -4,7 +4,13 @@ const liters = document.getElementById('liters');
 const percentage = document.getElementById('percentage');
 const remained = document.getElementById('remained');
 
-
+//작은컵을 마우스 클릭시 => 컵채우기 (full클래스)
+smallCups.forEach((cup, idx) => {
+  //작은컵에 클릭이벤트달때 함수에 idx(인덱스번호) 매개변수
+  cup.addEventListener('click', () => 작은컵들채우기(idx));
+});
+// 시작할때 남은 물량 계산
+큰컵채우기();
 
 function 작은컵들채우기(idx) {
   //마지막컵을 클릭했는데 이미 다 차있을경우와 중간컵을 클릭했는데 다차있을경우
