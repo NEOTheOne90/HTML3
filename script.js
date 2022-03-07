@@ -12,7 +12,16 @@ smallCups.forEach((cup, idx) => {
 // 시작할때 남은 물량 계산
 큰컵채우기();
 
-
+function 작은컵들채우기(idx) {
+  //마지막컵을 클릭했는데 이미 다 차있을경우와 중간컵을 클릭했는데 다차있을경우
+  if (idx === 7 && smallCups[idx].classList.contains('full')) idx--;
+  else if (
+    smallCups[idx].classList.contains('full') &&
+    !smallCups[idx].nextElementSibling.classList.contains('full')
+  ) {
+    idx--;
+  }
+  
   //일반적인 경우 클릭한 컵 이하로는 다 full 아니면 다 full 제거
   smallCups.forEach((cup, i) => {
     if (i <= idx) {
