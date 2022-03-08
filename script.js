@@ -1,3 +1,8 @@
+// 상수 정의
+const smallCups = document.querySelectorAll('.cup-small');
+const liters = document.getElementById('liters');
+const percentage = document.getElementById('percentage');
+const remained = document.getElementById('remained');
 
 //작은컵을 마우스 클릭시 => 컵채우기 (full클래스)
 smallCups.forEach((cup, idx) => {
