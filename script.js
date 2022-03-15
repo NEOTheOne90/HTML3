@@ -50,4 +50,12 @@ function 큰컵채우기() {
     percentage.textContent = `${(fullCups / totalCups) * 100}%`;
   }
 
+  if (fullCups === totalCups) {
+    //모든 컵이 다 채워졌을경우 남은양(리메인)은 안보이게 높이 0
+    remained.style.visibility = 'hidden';
+    remained.style.height = 0;
+  } else {
+    remained.style.visibility = 'visible';
+    liters.textContent = `${2 - (250 * fullCups) / 1000}L`;
+  }
 }
