@@ -39,7 +39,16 @@ function 큰컵채우기() {
   const fullCups = document.querySelectorAll('.cup-small.full').length;
   const totalCups = smallCups.length; //총 작은물컵의 갯수
 
-  
+  if (fullCups === 0) {
+    //채운컵이 없을경우 퍼센트는 안보이고 높이가 0
+    percentage.style.visibility = 'hidden';
+    percentage.style.height = 0;
+  } else {
+    //채운컵이 있으면 보이고 높이는
+    percentage.style.visibility = 'visible';
+    percentage.style.height = `${(fullCups / totalCups) * 330}px`;
+    percentage.textContent = `${(fullCups / totalCups) * 100}%`;
+  }
 
   if (fullCups === totalCups) {
     //모든 컵이 다 채워졌을경우 남은양(리메인)은 안보이게 높이 0
